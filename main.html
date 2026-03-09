@@ -97,8 +97,45 @@
 
         </section>
 
-     </main>
+        <div id="issue-modal" class="modal">
 
+            <div class="modal-box max-w-2xl">
+
+                <h2 id="modal-title" class="text-2xl font-semibold mb-3"></h2>
+
+                <div class="flex items-center gap-2 text-sm mb-4">
+                    <span id="modal-status"></span>
+                    <span>•</span>
+                    <span id="modal-author"></span>
+                    <span>•</span>
+                    <span id="modal-date"></span>
+                </div>
+
+                <p id="modal-description" class="text-gray-600 mb-4"></p>
+                <div class="flex gap-2 mb-4" id="modal-labels"></div>
+
+                <div class="bg-gray-100 rounded-lg py-4 px-10 flex justify-between">
+
+                    <div class="">
+                        <p class="text-sm text-gray-500">Assignee:</p>
+                        <p id="modal-assignee"></p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Priority:</p>
+                        <p id="modal-priority"></p>
+                    </div>
+
+                </div>
+
+                <div class="modal-action">
+                    <button id="close-modal-btn" class="btn btn-primary">Close</button>
+                </div>
+
+            </div>
+
+        </div>
+
+     </main>
 
     <script src="js/main.js"></script>
 </body>

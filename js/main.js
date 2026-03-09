@@ -7,7 +7,43 @@ const allBtn = document.querySelector("#tabs-section button:nth-child(1)");
 const openBtn = document.querySelector("#tabs-section button:nth-child(2)");
 const closedBtn = document.querySelector("#tabs-section button:nth-child(3)");
 
+const modal = document.getElementById('issue-modal');
+const modalTitle = document.getElementById('modal-title');
+const modalDescription = document.getElementById('modal-description');
+const modalAuthor = document.getElementById('modal-author');
+const modalDate = document.getElementById('modal-date');
+const closeModal = document.getElementById('close-modal-btn');
+const modalStatus = document.getElementById('modal-status');
+const modalPriority = document.getElementById('modal-priority');
+const modalAssignee = document.getElementById('modal-assignee');
+const modalLabels = document.getElementById("modal-labels");
+
 let allIssues = [];
+
+//modal
+function showModal(issue){
+    modalTitle.innerText = issue.title;
+    modalDescription.innerText = issue.description;
+    modalAuthor.innerText = `Opened by ${issue.author}`;
+    modalDate.innerText = new Date(issue.createdAt).toLocaleDateString();
+    modalLabels.innerHTML = generateLabels(issue.labels);
+
+    modalStatus.innerHTML = issue.status === "open" 
+    ? `<span class="badge badge-success badge-outline bg-green-500 text-white">Opened</span>` 
+    : `<span class="badge badge-secondary badge-outline">Closed</span>`;
+
+    modalPriority.innerHTML = `<span class="badge badge-error">${issue.priority.toUpperCase()}</span>`;
+
+    modalAssignee.innerHTML = issue.assignee 
+    ? `<span class="font-semibold">${issue.assignee}</span>` 
+    : `<span class="text-gray-400">Unassigned</span>`;
+
+    modal.classList.add('modal-open');
+}
+
+closeModal.addEventListener('click', ()=>{
+    modal.classList.remove('modal-open');
+})
 
 //to load all issues
 async function loadCards(){
@@ -79,7 +115,7 @@ function createCard(issue){
     card.classList.add("cursor-pointer");
 
     card.addEventListener("click", () => {
-        alert(issue.title + "\n\n" + issue.description);
+        showModal(issue);
     });
     return card;
 }
