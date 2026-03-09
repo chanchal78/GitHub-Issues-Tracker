@@ -1,7 +1,5 @@
-\*\*\*
-
-1. Difference between var, let and const:
-   var:
+\*\*\* 1. Difference between var, let and const:
+var:
 
 1. hoisted and initialized
 1. lets us redeclare a variable
