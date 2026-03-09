@@ -22,7 +22,7 @@ async function loadCards(){
 loadCards();
 
 //for displaying cards
-async function displayCards(cards){
+function displayCards(cards){
     cardContainer.innerHTML = "";
 
     issueCount.innerText = cards.length + " Issues";
@@ -66,3 +66,36 @@ async function displayCards(cards){
     });
 }
 
+
+//all button
+allBtn.addEventListener('click', () =>{
+    displayCards(allIssues);
+    setActive(allBtn);
+});
+
+//open button
+openBtn.addEventListener('click', () =>{
+    const openIssues = allIssues.filter(issue => issue.status ==='open');
+
+    displayCards(openIssues);
+    setActive(openBtn);
+});
+
+//closed button
+closedBtn.addEventListener('click', () =>{
+    const closedIssues = allIssues.filter(issue => issue.status === 'closed');
+
+    displayCards(closedIssues);
+    setActive(closedBtn);
+})
+
+//to set a button active
+function setActive(button){
+    document.querySelectorAll('#tabs-section button').forEach(btn =>{
+        btn.classList.remove('btn-primary', 'text-white');
+        btn.classList.add('btn-outline');
+    });
+
+    button.classList.remove('btn-outline');
+    button.classList.add("btn-primary", 'text-white');
+}
