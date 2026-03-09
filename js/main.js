@@ -18,6 +18,8 @@ const modalPriority = document.getElementById('modal-priority');
 const modalAssignee = document.getElementById('modal-assignee');
 const modalLabels = document.getElementById("modal-labels");
 
+const spinner = document.getElementById("loading-bar");
+
 let allIssues = [];
 
 //modal
@@ -30,7 +32,7 @@ function showModal(issue){
 
     modalStatus.innerHTML = issue.status === "open" 
     ? `<span class="badge badge-success badge-outline bg-green-500 text-white">Opened</span>` 
-    : `<span class="badge badge-secondary badge-outline">Closed</span>`;
+    : `<span class="badge badge-secondary badge-outline bg-red-500 text-white">Closed</span>`;
 
     modalPriority.innerHTML = `<span class="badge badge-error">${issue.priority.toUpperCase()}</span>`;
 
@@ -48,12 +50,17 @@ closeModal.addEventListener('click', ()=>{
 //to load all issues
 async function loadCards(){
 
+    spinner.classList.remove('hidden');
+    cardContainer.innerHTML = '';
+
     const res = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues");
     const data = await res.json();
     console.log(data);
     // console.log(cardContainer);
 
     allIssues = data.data;
+
+    spinner.classList.add('hidden');
     displayCards(allIssues);
 }
 
