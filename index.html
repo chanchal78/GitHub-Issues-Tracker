@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
     <title>GitHub Issues Tracker</title>
@@ -13,11 +14,53 @@
         }
     </style>
 </head>
+
+</head>
+
 <body>
-    <header>
-        <h1 class="">Hello World</h1>
-    </header>
-    
-    <script src="js/main.js"></script>
+
+    <section>
+
+        <div>
+            <div>
+                <img src="assets/github-logo.png" alt="github logo">
+            </div>
+        </div>
+
+        <div>
+            <h2>GitHub Issues Tracker</h2>
+            <p>Sign in to manage your issues</p>
+        </div>
+
+        <div>
+            <label for="username">Username</label>
+            <input type="text" name="username" placeholder="Enter Username">
+            <p>Default: admin</p>
+        </div>
+
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Enter Password">
+            <p>Default: admin123</p>
+        </div>
+
+        <button>Sign In</button>
+
+        <div>
+            <hr>
+            <span>OR</span>
+            <hr>
+        </div>
+
+        <div>
+            <p>Demo Credentials:</p>
+            <div>
+                <p><span>Username:</span> admin</p>
+                <p><span>Password:</span> admin123</p>
+            </div>
+        </div>
+
+    </section>
+
 </body>
 </html>
