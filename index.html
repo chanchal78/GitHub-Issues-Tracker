@@ -17,46 +17,48 @@
 
 </head>
 
-<body>
+<body class="bg-[#F8FAFC] flex items-center justify-center min-h-screen">
 
-    <section>
+    <section class=" w-[520px] p-8 rounded-xl bg-white shadow-sm text-center">
 
-        <div>
+        <div class="flex justify-center mb-4">
             <div>
                 <img src="assets/github-logo.png" alt="github logo">
             </div>
         </div>
 
         <div>
-            <h2>GitHub Issues Tracker</h2>
-            <p>Sign in to manage your issues</p>
+            <h2 class="text-2xl font-semibold">GitHub Issues Tracker</h2>
+            <p class="text-gray-500 mb-6">Sign in to manage your issues</p>
         </div>
 
-        <div>
-            <label for="username">Username</label>
-            <input type="text" name="username" placeholder="Enter Username">
-            <p>Default: admin</p>
+        <div class="text-left mb-3">
+            <label for="username" class="font-semibold">Username</label>
+            <input type="text" name="username" placeholder="Enter Username"
+            class="w-full mt-1 border rounded-md p-2">
+            <p class="text-xs text-[#4A00FF] mt-1">Default: admin</p>
         </div>
 
-        <div>
-            <label for="password">Password</label>
-            <input type="password" name="password" placeholder="Enter Password">
-            <p>Default: admin123</p>
+        <div class="text-left mb-4">
+            <label for="password" class="font-semibold">Password</label>
+            <input type="password" name="password" placeholder="Enter Password"
+            class="w-full mt-1 border rounded-md p-2">
+            <p class="text-xs text-[#4A00FF] mt-1">Default: admin123</p>
         </div>
 
-        <button>Sign In</button>
+        <button class="btn btn-primary w-full rounded-md bg-[#4A00FF]">Sign In</button>
 
-        <div>
-            <hr>
-            <span>OR</span>
-            <hr>
+        <div class="flex items-center gap-2 my-4">
+            <hr class="flex-grow border-gray-300">
+            <span class="text-gray-700">OR</span>
+            <hr class="flex-grow border-gray-300">
         </div>
 
-        <div>
-            <p>Demo Credentials:</p>
-            <div>
-                <p><span>Username:</span> admin</p>
-                <p><span>Password:</span> admin123</p>
+        <div class="">
+            <p class="text-xs text-gray-500">Demo Credentials:</p>
+            <div class="bg-[#F8FAFC] p-5">
+                <p><span class="font-semibold">Username:</span> admin</p>
+                <p><span class="font-semibold">Password:</span> admin123</p>
             </div>
         </div>
 
