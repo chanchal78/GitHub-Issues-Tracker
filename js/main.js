@@ -20,6 +20,8 @@ const modalLabels = document.getElementById("modal-labels");
 
 const spinner = document.getElementById("loading-bar");
 
+const search = document.getElementById('search-input');
+
 let allIssues = [];
 
 //modal
@@ -212,3 +214,14 @@ function setActive(button){
     button.classList.remove('btn-outline');
     button.classList.add("btn-primary", 'text-white');
 }
+
+// searchInput.addEventListener('input', ()=>{
+//     const searchText = searchInput.value.tolowerCase();
+//     const filteredIssues = allIssues.filter(issue =>{
+//         const title = issue.title.tolowerCase();
+        
+//         return `title.includes(searchText)`
+//     });
+
+//     displayCards(filteredIssues);
+// })
