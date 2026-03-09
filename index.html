@@ -34,19 +34,20 @@
 
         <div class="text-left mb-3">
             <label for="username" class="font-semibold">Username</label>
-            <input type="text" name="username" placeholder="Enter Username"
+            <input id="username" type="text" name="username" placeholder="Enter Username"
             class="w-full mt-1 border rounded-md p-2">
             <p class="text-xs text-[#4A00FF] mt-1">Default: admin</p>
         </div>
 
         <div class="text-left mb-4">
             <label for="password" class="font-semibold">Password</label>
-            <input type="password" name="password" placeholder="Enter Password"
+            <input id="password" type="password" name="password" placeholder="Enter Password"
             class="w-full mt-1 border rounded-md p-2">
             <p class="text-xs text-[#4A00FF] mt-1">Default: admin123</p>
         </div>
 
-        <button class="btn btn-primary w-full rounded-md bg-[#4A00FF]">Sign In</button>
+        <p id="error-message" class="text-xs text-red-500 flex hidden">Invalid username or password</p>
+        <button type="submit" id="sign-in-btn" class="btn btn-primary w-full rounded-md bg-[#4A00FF]">Sign In</button>
 
         <div class="flex items-center gap-2 my-4">
             <hr class="flex-grow border-gray-300">
@@ -64,5 +65,6 @@
 
     </section>
 
+    <script src="js/main.js"></script>
 </body>
 </html>
